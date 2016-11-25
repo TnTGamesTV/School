@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class Game2
+{    
+    private int rZ;
+    private int trys;
+    private int uZ;
+    private int max;
+    private Scanner sc;
+
+    public Game2(int trys){
+        this.rZ = -1;
+        this.trys = trys;
+        this.uZ = -1;
+
+        sc = new Scanner(System.in);
+        System.out.println("Geben Sie das Maximum der Zufallszahl.");
+        this.max = sc.nextInt();
+    }
+    
+    public void play(){
+       while( trys <= 5) {
+           rZ = (int)(Math.random() * this.max) + 1;
+           System.out.println("Geben Sie eine Zahl zwischen 1 und " + this.max + "ein:");
+           uZ = sc.nextInt();
+           if ( rZ < uZ ){ 
+               System.out.println("Ihre eingegebene Zahl ist zu groß.");
+           } else if ( rZ > uZ ){ 
+               System.out.println("Ihre eingegebene Zahl ist zu klein.");
+           }
+           
+           if( trys  == 5){
+               System.out.println("Sie haben keine Versuche mehr.");
+           }
+           
+           if (uZ == rZ){
+               System.out.println("Super. Sie haben die Zufallszahl erraten.");
+           }
+           
+           trys++;
+        }
+    }
+}
