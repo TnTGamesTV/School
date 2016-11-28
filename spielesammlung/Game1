@@ -79,6 +79,7 @@ public class Game1
      */
     public void play(int times){ 
         for(int i = 0; i < times; i++){ //Run the game n (times) rounds
+            System.out.print("\f"); //Clear the screen
             this.points -= 2; //Remove some cookies
             System.out.println("}============================================================{"); //Inform the player about it
             System.out.println("Dir wurden 2 Kekse als Einsatz abgezogen");                       //Inform the player about it
